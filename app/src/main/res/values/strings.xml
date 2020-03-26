@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Music_player</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">111111111</string>
+    <string name="first">4444444</string>
+    <string name="second">878855452</string>
 </resources>
