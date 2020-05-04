@@ -5,10 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".fragment.PlaylistFragment">
 
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start"/>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/play_list"
+        android:id="@+id/playlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/start"
         android:scrollbars="vertical"
         tools:listitem="@layout/item_song"/>
 </RelativeLayout>

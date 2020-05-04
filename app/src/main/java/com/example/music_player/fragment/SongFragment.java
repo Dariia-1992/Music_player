@@ -14,6 +14,7 @@ import com.example.music_player.R;
  * A simple {@link Fragment} subclass.
  */
 public class SongFragment extends Fragment {
+    public static final String ARG_ITEM_ID = "itemId";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
