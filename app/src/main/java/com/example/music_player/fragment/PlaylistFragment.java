@@ -44,18 +44,14 @@ public class PlaylistFragment extends Fragment {
                              Bundle savedInstanceState) {
         view =  inflater.inflate(R.layout.fragment_playlist, container, false);
         Context context = view.getContext();
-        SongAdapter adapter = new SongAdapter(tempSongList, listener);
-        RecyclerView recyclerView = view.findViewById(R.id.playlist);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        Button start = view.findViewById(R.id.start);
-        start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getAllAudioFromDevice(context);
-            }
-        });
+        getAllAudioFromDevice(context);
+
+        RecyclerView recyclerView = view.findViewById(R.id.playlist);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        SongAdapter adapter = new SongAdapter(tempSongList, listener);
+        recyclerView.setAdapter(adapter);
+
         return view;
     }
     @NeedsPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
