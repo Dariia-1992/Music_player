@@ -7,21 +7,51 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-        <androidx.drawerlayout.widget.DrawerLayout
-            android:id="@+id/drawer_layout"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:minHeight="?attr/actionBarSize"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/primary">
+            android:layout_height="wrap_content"
+            app:titleTextColor="@android:color/white"
+            android:background="@color/black">
 
-            <include layout="@layout/toolbar" />
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                 android:gravity="left">
+
+                <ImageView
+                    android:id="@+id/toolbar_menu"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_menu"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@id/toolbar_menu"
+                    android:textSize="18dp"
+                    android:text="@string/app_name"/>
+             </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+<!--        <androidx.drawerlayout.widget.DrawerLayout-->
+<!--            android:id="@+id/drawer_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/primary">-->
 
         <fragment
             android:id="@+id/nav_host_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/toolbar"
+            android:layout_below="@id/toolbar"
             android:name="androidx.navigation.fragment.NavHostFragment"
             app:navGraph="@navigation/main_nav"/>
 
-        </androidx.drawerlayout.widget.DrawerLayout>
+<!--        </androidx.drawerlayout.widget.DrawerLayout>-->
 </RelativeLayout>

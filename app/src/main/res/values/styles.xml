@@ -9,13 +9,6 @@
     </style>
 
     <style name="SplashTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowBackground">@color/primary</item>
     </style>
-
-    <style name="AppSearchViewStyle" parent="Widget.AppCompat.SearchView">
-        <item name="queryBackground">@android:color/transparent</item>
-        <item name="searchIcon">@drawable/icon_toolbar_search</item>
-        <item name="android:imeActionId">6</item>
-    </style>
-
 </resources>
