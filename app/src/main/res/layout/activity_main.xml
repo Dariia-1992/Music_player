@@ -36,14 +36,21 @@
                     android:textSize="18dp"
                     android:text="@string/app_name"/>
              </RelativeLayout>
-
         </androidx.appcompat.widget.Toolbar>
 
-<!--        <androidx.drawerlayout.widget.DrawerLayout-->
-<!--            android:id="@+id/drawer_layout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:background="@color/primary">-->
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/navigation_menu" />
 
         <fragment
             android:id="@+id/nav_host_fragment"
@@ -53,5 +60,5 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             app:navGraph="@navigation/main_nav"/>
 
-<!--        </androidx.drawerlayout.widget.DrawerLayout>-->
+    </androidx.drawerlayout.widget.DrawerLayout>
 </RelativeLayout>
