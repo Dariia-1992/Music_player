@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.music_player.R;
+import com.example.music_player.adapter.SampleFragmentPagerAdapter;
 import com.example.music_player.adapter.SongAdapter;
 import com.example.music_player.model.Song;
 
@@ -36,6 +38,9 @@ import pub.devrel.easypermissions.EasyPermissions;
 @RuntimePermissions
 public class PlaylistFragment extends Fragment {
     private static final int PERMISSION_REQUEST = 101;
+    public static final String ARG_PAGE = "ARG_PAGE";
+    private SampleFragmentPagerAdapter pagerAdapter;
+    private ViewPager viewPager;
     private View view;
     List<Song> tempSongList = new ArrayList<>();
 
@@ -70,6 +75,14 @@ public class PlaylistFragment extends Fragment {
         } else {
             EasyPermissions.requestPermissions(this, getString(R.string.rationale_write_permission), PERMISSION_REQUEST, Manifest.permission.READ_EXTERNAL_STORAGE);
         }
+    }
+
+    public static PlaylistFragment newInstance(int page) {
+        Bundle args = new Bundle();
+        args.putInt(ARG_PAGE, page);
+        PlaylistFragment fragment = new PlaylistFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
     private final SongAdapter.OnClickItem listener = id -> {
