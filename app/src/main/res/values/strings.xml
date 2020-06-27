@@ -9,6 +9,8 @@
 
     <string name="item_home">Home</string>
     <string name="item_favorite">Favorite</string>
+    
+    <string name="stub">unknown</string>
 
 
     <string name="hello_blank_fragment">111111111</string>
