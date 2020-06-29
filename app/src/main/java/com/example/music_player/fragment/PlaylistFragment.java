@@ -1,7 +1,6 @@
 package com.example.music_player.fragment;
 
 import android.Manifest;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
@@ -17,8 +16,6 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.music_player.R;
 import com.example.music_player.adapter.SampleFragmentPagerAdapter;
@@ -85,12 +82,12 @@ public class PlaylistFragment extends Fragment {
         return fragment;
     }
 
-    private final SongAdapter.OnClickItem listener = id -> {
+    private final SongAdapter.OnClickItem listener = title -> {
         View view = getView();
         if (view == null)
             return;
         Bundle bundle = new Bundle();
-        bundle.putString(SongFragment.ARG_ITEM_ID, id);
+        bundle.putString(SongFragment.ARG_ITEM_TITLE, title);
         Navigation.findNavController(getView()).navigate(R.id.action_playlistFragment_to_songFragment, bundle);
     };
 }

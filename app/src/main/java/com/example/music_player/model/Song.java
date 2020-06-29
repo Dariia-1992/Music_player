@@ -10,7 +10,6 @@ public class Song {
     public Song(String title) {
         this.title = title;
     }
-
     public String getPath() { return path; }
     public String getTitle() {
         return title;

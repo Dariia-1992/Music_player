@@ -16,7 +16,7 @@ import java.util.List;
 public class SongAdapter extends RecyclerView.Adapter<SongAdapter.ViewHolder> {
 
     public interface OnClickItem {
-        void onClicked(String id);
+        void onClicked(String title);
     }
 
     private final OnClickItem listener;
