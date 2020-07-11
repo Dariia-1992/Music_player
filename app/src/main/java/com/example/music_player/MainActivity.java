@@ -5,28 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.viewpager.widget.ViewPager;
 
-import android.Manifest;
-import android.content.Context;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-
 import com.example.music_player.adapter.SampleFragmentPagerAdapter;
-import com.example.music_player.model.Song;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import permissions.dispatcher.NeedsPermission;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager(), 1));
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
+        //NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+               // .findFragmentById(R.id.nav_host_fragment);
+        //NavController navCo = navHostFragment.getNavController();
+
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     }
