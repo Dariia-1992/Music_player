@@ -33,11 +33,9 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
         //NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
-               // .findFragmentById(R.id.nav_host_fragment);
+              // .findFragmentById(R.id.nav_host_fragment);
         //NavController navCo = navHostFragment.getNavController();
-
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     }
 
     @Override
