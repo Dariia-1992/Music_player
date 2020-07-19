@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -88,6 +90,6 @@ public class PlaylistFragment extends Fragment {
             return;
         Bundle bundle = new Bundle();
         bundle.putString(SongFragment.ARG_ITEM_TITLE, title);
-        Navigation.findNavController(getView()).navigate(R.id.action_playlistFragment_to_songFragment, bundle);
+        //FragmentTransaction ft =
     };
 }
